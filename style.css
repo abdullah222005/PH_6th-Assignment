@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+.container, .containerTM{
+    max-width: 88%;
+    margin: 0 auto;
+}
+.CategoryBtn {
+    cursor: pointer;
+    padding: 12px;
+    text-align: left;
+    width: 100%;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+.CategoryBtn.inactive {
+    background: #EDFAF1;
+    color: black;
+}
+.CategoryBtn:hover{
+    background-color: #DCFCE7;
+}
+.CategoryBtn.active {
+    background: #15803D;
+    color: white;
+}
+
+@media screen and (max-width: 576px) {
+    .container{
+    max-width: 96%;
+    margin: 0 auto;
+    }
+    .containerTM{
+        max-width: 99%;
+        margin: 0 auto;
+    }
+    #navbar h1{
+        font-size: 20px;
+        display: inline-block;
+    }
+    #navbar ul{
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    #navbar ul li a{
+        font-size: 16px;
+    }
+    #banner{
+        position: relative;
+        overflow: hidden;
+    }
+    #banner img{
+        position: absolute;
+        z-index: 10;
+        opacity: 66%;
+    }
+    .img-lf{
+        width: 66%;
+        left: -40px;
+        top: 50px;
+    }
+    .img-rg{
+        width: 66%;
+        right: -40px;
+        top: 50px;
+    }
+    #bannerDetails{
+        z-index: 11;
+    }
+    #bannerDetails h1{
+        font-size: 30px;
+        padding-top: 20px;
+    }
+    #bannerDetails p{
+        width: 77%;
+        margin: 10px auto 20px auto;
+        font-weight: 500;
+    }
+    #bannerDetails a{
+        margin-bottom: 22px;
+        width: 44%;
+    }
+    #TreesSection{
+        padding-bottom: 0px;
+        width: 100%;
+    }
+    #wholeSection{
+       display: flex;
+       flex-wrap: wrap;
+       gap: 20px;
+    }
+    #CatSection{
+        order: 1;
+        width: 44%;
+    }
+    #CartSection{
+        order: 2;
+        width: 48%;
+    }
+    #CartSection h1{
+        text-align: right;
+    }
+    #CardsContainer{
+        grid-template-columns: 1fr;
+        width: 96%;
+        order: 3;
+        margin: 0 auto;
+        gap: 1rem;
+    }
+    #spinner{
+        top: 777px;
+    }
+    #AboutDetails{
+        flex-direction: column;
+    }
+    #AboutSection{
+        padding-bottom: 30px;
+    }
+    #About{
+        max-width: 100%;
+    }
+    .AboutDetails-img{
+        width: 77%;
+        margin-bottom: 20px;
+    }
+    #impact{
+        padding: 30px 0 50px 0;
+    }
+    #impactDiv{
+        gap: 20px;
+    }
+    #PlantTree h1{
+        padding: 30px 0;
+    }
+    #PlantTree{
+        padding-bottom: 33px;
+    }
+    #PlantTree form{
+        width: 77%;
+        padding: 22px;
+    }
+    #footer{
+        padding: 11px 0;
+    }
+}
+
+
