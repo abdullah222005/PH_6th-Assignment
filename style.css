@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 .container, .containerTM{
-    max-width: 88%;
+    max-width: 1140px;
     margin: 0 auto;
 }
 .CategoryBtn {
@@ -51,21 +51,21 @@
     }
     #banner img{
         position: absolute;
-        z-index: 10;
+        z-index: 1;
         opacity: 66%;
     }
     .img-lf{
         width: 66%;
-        left: -40px;
-        top: 50px;
+        left: -10%;
+        top: 34%;
     }
     .img-rg{
         width: 66%;
-        right: -40px;
-        top: 50px;
+        right: -10%;
+        top: 34%;
     }
     #bannerDetails{
-        z-index: 11;
+        z-index: 2;
     }
     #bannerDetails h1{
         font-size: 30px;
@@ -89,26 +89,14 @@
        flex-wrap: wrap;
        gap: 20px;
     }
-    #CatSection{
-        order: 1;
-        width: 44%;
-    }
-    #CartSection{
-        order: 2;
-        width: 48%;
-    }
-    #CartSection h1{
-        text-align: right;
-    }
     #CardsContainer{
         grid-template-columns: 1fr;
         width: 96%;
-        order: 3;
         margin: 0 auto;
         gap: 1rem;
     }
     #spinner{
-        top: 777px;
+        top: 3%;
     }
     #AboutDetails{
         flex-direction: column;

@@ -20,9 +20,8 @@
         <div class="container py-4  flex justify-between items-center text-white">
             <h1 class="text-2xl font-semibold">Green Earth</h1>
             <ul class="flex gap-8">
-                <li><a class="text-[1.11rem]">About</a></li>
-                <li><a class="text-[1.11rem]">Gallery</a></li>
-                <li><a class="text-[1.11rem]">Plant a Tree</a></li>
+                <li><a class="text-[1.11rem] cursor-pointer">About</a></li>
+                <li><a class="text-[1.11rem] cursor-pointer">Gallery</a></li>
             </ul>
             <a
                 class="font-semibold bg-[#FACC15] text-[#15803D] px-5 py-3 cursor-pointer hover:bg-yellow-200 rounded-4xl">
@@ -47,33 +46,73 @@
 
     <section id="TreesSection" class="bg-[#EDFAF1] pb-20">
         <div class="containerTM relative">
-            <h1 class="text-3xl mx-auto font-semibold py-10 text-center">Choose Your Trees</h1>
+            <div class="flex justify-between items-center">
+                <label for="my-drawer"
+                    class="bg-[#15803D] text-white text-lg lg:pr-3 px-2 py-2 rounded-lg cursor-pointer hover:bg-green-600 drawer-button">
+                    <div class="btn btn-ghost btn-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h7" />
+                        </svg>
+                    </div>
+                    <span class="hidden lg:inline">Categories</span>
+                </label>
+                <h1 class="text-2xl lg:text-4xl mx-auto font-semibold py-10 text-center">Choose Your Trees</h1>
+                <label for="my-drawer-4"
+                    class="bg-[#15803D] text-white text-lg px-5 py-3 rounded-lg cursor-pointer hover:bg-green-600 drawer-button"><i
+                        class="fa-solid fa-cart-shopping lg:mr-2"></i> <span class="hidden lg:inline">Cart</span></label>
+            </div>
+
             <section id="spinner" class="hidden w-full py-10 absolute text-center">
                 <span class="loading loading-dots loading-3xl"></span>
             </section>
+
             <div id="wholeSection" class="flex gap-2 justify-between">
-                <div id="CatSection" class="w-[14%]">
-                    <h1 class="font-semibold text-2xl">Categories</h1>
-                    <div id="CatContainer" class="flex flex-col gap-2 w-full mt-5 text-lg">
-                        <button id="AllBtn" onclick="loadAllTrees()"
-                            class="inactive CategoryBtn cursor-pointer py-3 pl-3 w-full text-left rounded-lg">
-                            All Trees
-                        </button>
+                <div id="CatSection" class="">
+                    <div class="drawer">
+                        <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+                        <div class="drawer-content">
+                            <!-- Page content here -->
+                        </div>
+                        <div class="drawer-side">
+                            <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+                            <ul class="bg-base-200 text-base-content min-h-full lg:w-[22%] w-[175px] p-4">
+                                <!-- Sidebar content here -->
+                                <div id="CatContainer" class="flex flex-col gap-2 w-full mt-5 text-lg">
+                                    <button id="AllBtn" onclick="loadAllTrees()"
+                                        class="inactive CategoryBtn cursor-pointer py-3 pl-3 w-full text-left rounded-lg">
+                                        All Trees
+                                    </button>
+                                </div>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <div id="CardsContainer" class="grid grid-cols-3 gap-2 w-[70%]">
+                <div id="CardsContainer" class="grid grid-cols-3 gap-7 w-[96%]">
 
                 </div>
 
-                <div id="CartSection" class="bg-white rounded-lg p-2 w-[16%]">
-                    <h1 class="font-semibold text-2xl mb-3">Your Cart</h1>
-                    <div id="cartItems" class="flex flex-col my-4">
-
-                    </div>
-                    <div class="flex justify-between border-t-2 border-[#E9EAEB] font-semibold text-xl">
-                        <span>Total:</span>
-                        <span id="cartTotal">৳0</span>
+                <div id="CartSection" class="rounded-lg p-2">
+                    <div class="drawer drawer-end">
+                        <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
+                        <div class="drawer-content">
+                            <!-- Page content here -->
+                        </div>
+                        <div class="drawer-side">
+                            <label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay"></label>
+                            <ul class="bg-base-200 text-base-content min-h-full lg:w-[22%] w-[175px] p-4">
+                                <!-- Sidebar content here -->
+                                <h1 class="font-semibold text-2xl text-center mb-3">Your Cart</h1>
+                                <div id="cartItems" class="flex flex-col my-4">
+                                </div>
+                                <div class="flex justify-between border-t-2 border-[#E9EAEB] font-semibold text-xl">
+                                    <span>Total:</span>
+                                    <span id="cartTotal">৳0</span>
+                                </div>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -97,7 +136,6 @@
             <div id="AllDetailsContainer"></div>
         </div>
     </dialog>
-
 
     <section id="AboutSection" class="bg-[#EDFAF1] pb-20">
         <div id="About" class="mx-auto max-w-[55%]">
@@ -124,17 +162,17 @@
             <h1 class="text-3xl font-semibold pb-10 text-center">Out Impact</h1>
             <div id="impactDiv" class="grid grid-cols-3 gap-11 w-full">
                 <div
-                    class="bg-white py-10 hover:scale-[1.05] cursor-pointer rounded-lg flex flex-col items-center justify-center text-center">
+                    class="bg-white py-10 hover:scale-[1.05] ease-in-out duration-300 cursor-pointer rounded-lg flex flex-col items-center justify-center text-center">
                     <h1 class="text-[#15803D] text-3xl font-semibold pb-1">500K+</h1>
                     <p>Trees Planted</p>
                 </div>
                 <div
-                    class="bg-white py-10 hover:scale-[1.05] cursor-pointer rounded-lg flex flex-col items-center justify-center text-center">
+                    class="bg-white py-10 hover:scale-[1.05] ease-in-out duration-300 cursor-pointer rounded-lg flex flex-col items-center justify-center text-center">
                     <h1 class="text-[#15803D] text-3xl font-semibold pb-1">120+</h1>
                     <p>Communities Involved</p>
                 </div>
                 <div
-                    class="bg-white py-10 hover:scale-[1.05] cursor-pointer rounded-lg flex flex-col items-center justify-center text-center">
+                    class="bg-white py-10 hover:scale-[1.05] ease-in-out duration-300 cursor-pointer rounded-lg flex flex-col items-center justify-center text-center">
                     <h1 class="text-[#15803D] text-3xl font-semibold pb-1">30+</h1>
                     <p>Countries Reached</p>
                 </div>
